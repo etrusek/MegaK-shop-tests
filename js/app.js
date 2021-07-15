@@ -3,8 +3,7 @@ const counterDisplay = document.querySelector('.counter-display');
 
 let counter = 0;
 const counterFunction = () => {
-    counter++;
-    counterDisplay.innerText = counter
+    counterDisplay.innerText = ++counter;
 }
 
 btnCounter.addEventListener('click', counterFunction)
