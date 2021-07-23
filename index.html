@@ -1,45 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pl">
 <head>
-    <title>My title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop tests</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<p class="counter-display">0</p>
-<button class="btn-counter">Click to add 1</button>
-
-<script src="js/app.js"></script>
-<section>
-<h2>Kod pliku index.html</h2>
-<code>
-    &lt;!DOCTYPE html&gt;<br>
-    &lt;html&gt;<br>
-    &lt;head&gt;<br>
-    &nbsp;&nbsp;&lt;title&gt;My title&lt;/title&gt;<br>
-    &lt;/head&gt;<br>
-    &lt;body&gt;<br>
-    &nbsp;&nbsp;    &lt;p class="counter-display"&gt;0&lt;/p&gt;<br>
-    &nbsp;&nbsp;&lt;button class="btn-counter"&gt;Click to add 1&lt;/button&gt;<br>
-    <br>
-    &nbsp;&nbsp;&lt;script src="js/app.js"&gt;&lt;/script&gt;<br>
-    <br>
-    &lt;/body&gt;<br>
-    &lt;/html&gt;<br>
-</code>
+<h1 class="title">Skelp</h1>
+<section class="products">
+    <p>Możesz kupić</p>
+    <ul>
+        <li>Cebula : 1zł
+            <button data-name="Cebula" data-price="1">Kup</button>
+        </li>
+        <li>Pomodory : 5zł
+            <button data-name="Pomodory" data-price="5">Kup</button>
+        </li>
+        <li>Ser żółty : 10zł
+            <button data-name="Ser żółty" data-price="10">Kup</button>
+        </li>
+    </ul>
 </section>
 <section>
-    <h2>Kod pliku index.js</h2>
-    <code>
-        const btnCounter = document.querySelector('.btn-counter');<br>
-        const counterDisplay = document.querySelector('.counter-display');<br>
-        <br>
-        let counter = 0;<br>
-        const counterFunction = () => {<br>
-        &nbsp;counterDisplay.innerText = ++counter<br>
-        }<br>
-        <br>
-        btnCounter.addEventListener('click', counterFunction)<br>
-    </code>
+    <h2>Twój koszyk</h2>
+    <ul class="ul-finish-buy"></ul>
+    <button class="btn-final-buy" disabled>Kupiłeś</button>
 </section>
+
+
+<script src="index.js"></script>
+<script src="ui.js"></script>
 </body>
 </html>

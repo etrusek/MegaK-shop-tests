@@ -1,0 +1,32 @@
+.title {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    text-align: right;
+    letter-spacing: 0.1em;
+    background-color: #fff;
+    border: 1px solid gray;
+}
+
+button:hover {
+    background-color:#4095c6;
+}
+
+.products {
+    text-align: center;
+}
+
+.products li {
+    border-bottom: 1px solid cadetblue;
+    max-width: 300px;
+    margin: 15px auto 0 auto;
+    padding-bottom: 2px;
+    list-style: none;
+
+}
+
+.products li button {
+    margin-left: 50px;
+}
