@@ -9,28 +9,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="title">Skelp</h1>
-<section class="products">
-    <p>Możesz kupić</p>
-    <ul>
-        <li>Cebula : 1zł
-            <button data-name="Cebula" data-price="1">Kup</button>
-        </li>
-        <li>Pomodory : 5zł
-            <button data-name="Pomodory" data-price="5">Kup</button>
-        </li>
-        <li>Ser żółty : 10zł
-            <button data-name="Ser żółty" data-price="10">Kup</button>
-        </li>
-    </ul>
-</section>
-<section>
-    <h2>Twój koszyk</h2>
-    <ul class="ul-finish-buy"></ul>
-    <button class="btn-final-buy" disabled>Kupiłeś</button>
-</section>
+<h1>Kalkulator:</h1>
 
-
+<main>
+    <p class="output">0</p>
+    <section class="calc">
+        <ul class="ulCalc"></ul>
+        <ul class="ulActions"></ul>
+    </section>
+    <aside class="calcHistory">
+        <h3>Historia bliczeń</h3>
+    </aside>
+</main>
 <script src="index.js"></script>
 <script src="ui.js"></script>
 </body>

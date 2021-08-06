@@ -1,35 +1,35 @@
-class Basket {
+class Counting {
     constructor() {
-        this.productsPurchased = [];
-    }
+        this.equation = {
+            firstNumber: null,
+            secondNumber: null,
+            sign: null,
+        }
+    };
 
-    add(product) {
-        this.productsPurchased.push(product)
-    }
+    addToFirstNumber(num) {
+        this.equation.firstNumber = this.equation.firstNumber === null ? Number(num) : String(this.equation.firstNumber) + String(num);
+    };
 
-    value() {
-        return this.productsPurchased
-            .reduce((prev, product) => Number(product.prodPrice) + prev, 0)
-            .toFixed(2);
-    }
+    addSign(sign) {
+        this.equation.sign = sign;
+    };
 
+    doMath() {
+        switch (this.equation.sign) {
+            case "+":
+                return this.equation.secondNumber + this.equation.firstNumber;
+                break;
+            case "-":
+                return this.equation.secondNumber - this.equation.firstNumber;
+                break;
+            case "*":
+                return this.equation.secondNumber * this.equation.firstNumber;
+                break;
+            case "/":
+                return this.equation.secondNumber / this.equation.firstNumber;
+                break;
+
+        }
+    }
 }
-
-
-class Product {
-    constructor(prodName, prodPrice) {
-        this.prodName = prodName;
-        this.prodPrice = prodPrice;
-    }
-
-}
-
-
-const marioBasket = new Basket();
-const onion = new Product("Cebula", 1);
-const tomato = new Product("Pomidor", 5);
-
-const cheese = new Product("Ser żółty", 10);
-
-
-
