@@ -10,17 +10,14 @@
 </head>
 <body>
 <h1>Kalkulator:</h1>
-
-<main>
-    <p class="output">0</p>
-    <section class="calc">
-        <ul class="ulCalc"></ul>
-        <ul class="ulActions"></ul>
-    </section>
-    <aside class="calcHistory">
-        <h3>Historia bliczeń</h3>
-    </aside>
-</main>
+<form>
+    <label for="firstNumber">Pierwsza liczba</label>
+    <input type="text" id="firstNumber" autofocus>
+    <label for="secondNumber">Druga liczba</label>
+    <input type="text" id="secondNumber">
+    <button type="submit">blicz</button>
+</form>
+<article></article>
 <script src="index.js"></script>
 <script src="ui.js"></script>
 </body>
