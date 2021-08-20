@@ -1,20 +1,20 @@
 // task2
 const {readdir, stat} = require('fs').promises;
 const arrOfFiles = []
-let path = './Projekty';
-const listingFiles = async (path) => {
+const path = './Projekty';
+
+const listingFiles = async (path, tree) => {
     const files = await readdir(path);
-    console.log(files)
+    // console.log(files)
     for (const file of files) {
-        console.log(file, ' w ścieżce ', path);
-        if ((await stat(`${path}/${file}`)).isDirectory()) {
-            path = `${path}/${file}`;
-            await listingFiles(path)
-            console.log('tu sprawdzić co jest w środku')
+        const isFolder = (await stat(`${path}/${file}`)).isDirectory();
+        console.log(tree, file, ' - ', isFolder ? "Folder" : "Plik");
+        if (isFolder) {
+            await listingFiles(`${path}/${file}`, `${tree}--`)
         }
     }
 }
-listingFiles(path).then(a => arrOfFiles.push(a));
+listingFiles(path, '').then(a => arrOfFiles.push(a));
 console.log(arrOfFiles, 'koniec');
 
 
