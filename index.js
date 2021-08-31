@@ -1,10 +1,39 @@
-// s2w3d1t1
+//s2w3d3t2
 const {exec} = require('child_process');
-exec('node test.js', (err, stdout, stderr) => {
-    console.log('Program has finished!', stdout);
-    console.log('Error stderr: ', stderr);
+const {promisify} = require('util');
+const execProm = promisify(exec)
+const path = process.argv[2];
+(async () => {
+    const dirMake = await execProm('dir', {
+        cwd: 'C:\\',
+    })
+    console.log(dirMake)
+})()
+// exec('dir', {
+//     cwd: 'C:\\'
+// }, function(error, stdout, stderr) {
+//     console.log('aaa',stdout)
+// });
 
-});
+//s2w3d3t1
+// const {exec} = require('child_process');
+// const arg = process.argv[2];
+// let open = null;
+// if (arg === 'Kalkulator'){
+//    open = 'calc.exe';
+// } else if (arg === 'Paint'){
+//    open = 'mspaint.exe';
+// }
+// exec(open);
+
+
+// s2w3d1t1
+// const {exec} = require('child_process');
+// exec('node test.js', (err, stdout, stderr) => {
+//     console.log('Program has finished!', stdout);
+//     console.log('Error stderr: ', stderr);
+//
+// });
 
 
 //s2w2d4/5lesson
