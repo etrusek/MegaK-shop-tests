@@ -1,14 +1,26 @@
+//s2w3d3
+// const {encryptText, decryptText} = require('./cipher')
+//
+// const SALT = 'asadasdasdasf398y3hfkjn394fh';
+//
+// (async () => {
+//     const encrypted = await encryptText('poklik', '12345678', SALT);
+//     console.log(encrypted)
+//     const decrypted = await decryptText('c4ad020cdfdedfc21dbab2acac444cdf','12345678',SALT, '233d6d41b6e0fb92aa8cc72d66312047');
+//     console.log(decrypted)
+// })()
+
 //s2w3d3t2
-const {exec} = require('child_process');
-const {promisify} = require('util');
-const execProm = promisify(exec)
-const path = process.argv[2];
-(async () => {
-    const dirMake = await execProm('dir', {
-        cwd: 'C:\\',
-    })
-    console.log(dirMake)
-})()
+// const {exec} = require('child_process');
+// const {promisify} = require('util');
+// const execProm = promisify(exec)
+// const path = process.argv[2];
+// (async () => {
+//     const dirMake = await execProm('dir', {
+//         cwd: 'C:\\',
+//     })
+//     console.log(dirMake)
+// })()
 // exec('dir', {
 //     cwd: 'C:\\'
 // }, function(error, stdout, stderr) {
