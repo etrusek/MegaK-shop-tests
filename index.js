@@ -1,3 +1,29 @@
+//s2d3d5
+const {hash, compare} = require('bcrypt');
+hash('text do shashowania', 10, (err,hash)=>{
+    console.log(hash);
+    compare('text do shashowania', hash,(err,res)=>{
+        if (res){
+            console.log('działa zapraszam')
+        } else{
+            console.log('nie przepuszczę')
+        }
+    })
+})
+
+// const {pbkdf2} = require('crypto');
+// const salt = 'OLHIJBGaijubaKIJ*&976$%YH:>';
+// pbkdf2('Tekst do zhashowania', salt, 100000,64,'sha512',(err,derivedKey)=>{
+//     if (err) throw err;
+//     console.log(derivedKey.toString('hex'))
+// })
+// const {createHmac} = require('crypto');
+// const salt = 'OLHIJBGaijubaKIJ*&976$%YH:>';
+// const hash = createHmac('sha512', salt)
+//     .update('Tekst do zhashowania')
+//     .digest('hex');
+// console.log(hash);
+
 //s2w3d3
 // const {encryptText, decryptText} = require('./cipher')
 //
