@@ -1,15 +1,30 @@
-//s2d3d5
+//s2w4d1t1
 const {hash, compare} = require('bcrypt');
-hash('text do shashowania', 10, (err,hash)=>{
-    console.log(hash);
-    compare('text do shashowania', hash,(err,res)=>{
-        if (res){
-            console.log('działa zapraszam')
-        } else{
-            console.log('nie przepuszczę')
-        }
-    })
+const hashToCheck = '$2b$10$gi5ajJoVXA/lOO9jU7suZuQ4D/hrlBhHtxaRxJpy.mXc0gHKowx7q';
+const userEnterPasword = process.argv[2];
+
+compare(userEnterPasword, hashToCheck,(err,res)=>{
+    if (res){
+        console.log('Logged in!')
+    } else{
+        console.log('nie przepuszczę')
+    }
 })
+
+
+
+//s2d3d5
+// const {hash, compare} = require('bcrypt');
+// hash('text do shashowania', 10, (err,hash)=>{
+//     console.log(hash);
+//     compare('text do shashowania', hash,(err,res)=>{
+//         if (res){
+//             console.log('działa zapraszam')
+//         } else{
+//             console.log('nie przepuszczę')
+//         }
+//     })
+// })
 
 // const {pbkdf2} = require('crypto');
 // const salt = 'OLHIJBGaijubaKIJ*&976$%YH:>';
