@@ -1,1 +1,1 @@
-{"encrypted":"fa8d6658a4aee92b33dad1b3d70b50e933225eb796a39a5124b8cf7e58f68de7","iv":"da9b42879c50d1878f11a18fb0a64eca"}
+Tekst do zaszyfrowania
