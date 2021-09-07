@@ -1,28 +1,43 @@
-//s2w3d5
+//s2w4d1t1
+const {hash, compare} = require('bcrypt');
+const hashToCheck = '$2b$10$gi5ajJoVXA/lOO9jU7suZuQ4D/hrlBhHtxaRxJpy.mXc0gHKowx7q';
+const userEnterPasword = process.argv[2];
 
-// const {promisify} = require('util');
-// const scrypt = promisify(require('crypto').scrypt);
-// const randomBytes = promisify(require('crypto').randomBytes);
-const {createHmac} = require('crypto');
-const salt = 'ALIJS*&kjba987y(&%U())_*?><$';
-const hash = createHmac('sha512', salt)
-    .update('tekst do zhaszowania')
-    .digest('hex');
-console.log(hash)
-//
-// async function encryptText(text, password, salt) {
-//     const algorithm = 'aes-192-cbc';
-//     const key = await scrypt(password, salt, 24);
-//     const iv = await randomBytes(16);
-//
-//     const cipher = createCipheriv(algorithm, key, iv);
-//     let  encrypted = cipher.update(text, 'utf8','hex');
-//     encrypted += cipher.final('hex');
-//     return {
-//         encrypted,
-//         iv: iv.toString('hex')
-//     }
-// }
+compare(userEnterPasword, hashToCheck,(err,res)=>{
+    if (res){
+        console.log('Logged in!')
+    } else{
+        console.log('nie przepuszczę')
+    }
+})
+
+
+
+//s2d3d5
+// const {hash, compare} = require('bcrypt');
+// hash('text do shashowania', 10, (err,hash)=>{
+//     console.log(hash);
+//     compare('text do shashowania', hash,(err,res)=>{
+//         if (res){
+//             console.log('działa zapraszam')
+//         } else{
+//             console.log('nie przepuszczę')
+//         }
+//     })
+// })
+
+// const {pbkdf2} = require('crypto');
+// const salt = 'OLHIJBGaijubaKIJ*&976$%YH:>';
+// pbkdf2('Tekst do zhashowania', salt, 100000,64,'sha512',(err,derivedKey)=>{
+//     if (err) throw err;
+//     console.log(derivedKey.toString('hex'))
+// })
+// const {createHmac} = require('crypto');
+// const salt = 'OLHIJBGaijubaKIJ*&976$%YH:>';
+// const hash = createHmac('sha512', salt)
+//     .update('Tekst do zhashowania')
+//     .digest('hex');
+// console.log(hash);
 
 //s2w3d3
 // const {encryptText, decryptText} = require('./cipher')
