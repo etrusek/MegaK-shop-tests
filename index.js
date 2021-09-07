@@ -1,3 +1,29 @@
+//s2w3d5
+
+// const {promisify} = require('util');
+// const scrypt = promisify(require('crypto').scrypt);
+// const randomBytes = promisify(require('crypto').randomBytes);
+const {createHmac} = require('crypto');
+const salt = 'ALIJS*&kjba987y(&%U())_*?><$';
+const hash = createHmac('sha512', salt)
+    .update('tekst do zhaszowania')
+    .digest('hex');
+console.log(hash)
+//
+// async function encryptText(text, password, salt) {
+//     const algorithm = 'aes-192-cbc';
+//     const key = await scrypt(password, salt, 24);
+//     const iv = await randomBytes(16);
+//
+//     const cipher = createCipheriv(algorithm, key, iv);
+//     let  encrypted = cipher.update(text, 'utf8','hex');
+//     encrypted += cipher.final('hex');
+//     return {
+//         encrypted,
+//         iv: iv.toString('hex')
+//     }
+// }
+
 //s2w3d3
 // const {encryptText, decryptText} = require('./cipher')
 //
