@@ -1,16 +1,49 @@
+//s2w4d4 Stream
+//nowsza wersja streamów od 16 Node.js
+// const {createReadStream, createWriteStream} = require('fs');
+// const {pipeline} = require('stream').promises;
+//
+//
+// (async () => {
+//     await pipeline(
+//         createReadStream('s2w4d12.js'),
+//         createWriteStream('s2w4d12aaaaa.js')
+//     )
+// })()
+
+//starsza wersja streamów przed 16 Node.js
+// const {createReadStream, createWriteStream} = require('fs');
+// const r = createReadStream('s2w4d12.js');
+// const w = createWriteStream('s2w4d12aaaaa.js');
+// r.pipe(w);
+// r.on('end', ()=> console.log('Ready!'));
+
+//Najstarsza wersja streamów
+// const {createReadStream, createWriteStream} = require('fs');
+// const r = createReadStream('s2w4d12.js');
+// const w = createWriteStream('s2w4d12aaaaa.js');
+//
+// r.on('data', data=>w.write(data));
+// r.on('end', ()=>{
+//     w.close();
+//     console.log('Ready!');
+// })
+
+// s2w4d3 Buffer
+// console.log(Buffer)
+
 //s2w4d1t1
-const {hash, compare} = require('bcrypt');
-const hashToCheck = '$2b$10$gi5ajJoVXA/lOO9jU7suZuQ4D/hrlBhHtxaRxJpy.mXc0gHKowx7q';
-const userEnterPasword = process.argv[2];
-
-compare(userEnterPasword, hashToCheck,(err,res)=>{
-    if (res){
-        console.log('Logged in!')
-    } else{
-        console.log('nie przepuszczę')
-    }
-})
-
+// const {hash, compare} = require('bcrypt');
+// const hashToCheck = '$2b$10$gi5ajJoVXA/lOO9jU7suZuQ4D/hrlBhHtxaRxJpy.mXc0gHKowx7q';
+// const userEnterPasword = process.argv[2];
+//
+// compare(userEnterPasword, hashToCheck,(err,res)=>{
+//     if (res){
+//         console.log('Logged in!')
+//     } else{
+//         console.log('nie przepuszczę')
+//     }
+// })
 
 
 //s2d3d5
