@@ -1,15 +1,17 @@
 //s2w4d4 Stream
 //nowsza wersja streamów od 16 Node.js
-// const {createReadStream, createWriteStream} = require('fs');
-// const {pipeline} = require('stream').promises;
-//
-//
-// (async () => {
-//     await pipeline(
-//         createReadStream('s2w4d12.js'),
-//         createWriteStream('s2w4d12aaaaa.js')
-//     )
-// })()
+const {createReadStream, createWriteStream} = require('fs');
+const {pipeline} = require('stream').promises;
+const {createGzip, createGunzip}=require('zlib');
+
+
+(async () => {
+    await pipeline(
+        createReadStream('s2w4d12.js'),
+        createGzip(),
+        createWriteStream('s2w4d12aaaaa.js')
+    )
+})()
 
 //starsza wersja streamów przed 16 Node.js
 // const {createReadStream, createWriteStream} = require('fs');
