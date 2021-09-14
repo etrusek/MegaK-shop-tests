@@ -4,7 +4,9 @@ const megaRestaurant = new Restaurant();
 let tablesCount = 25;
 
 // Tutaj dodaj nasłuchiwanie
-
+megaRestaurant.on('event', event => {
+   !isNaN(event)  ? console.log(`zostało stolików ${tablesCount += event}`) : console.log(event)
+    })
 megaRestaurant.emit()
 
 megaRestaurant.open(); // "Otwarto restaurację."
