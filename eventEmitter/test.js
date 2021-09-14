@@ -1,8 +1,8 @@
-const {clock} = require('./test2')
+const {Clock} = require('./test2')
 
-clock()
-    .on('tic', (...args) => {
-        console.log('0.5 sec', args[0], args[1])
+new Clock()
+    .on('tic', () => {
+        console.log('0.5 sec')
     })
     .once('tic', () => {
         console.log('działa tylko raz - once')

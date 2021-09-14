@@ -1,16 +1,15 @@
 const {EventEmitter} = require('events')
 
-const clock = () => {
-    const ee = new EventEmitter();
-
-    setInterval(() => {
-        ee.emit('tic', 'przekazany argument dodatkowo', [1, 2])
-    }, 500);
-    setInterval(() => {
-        ee.emit('tack')
-    }, 1000);
-
-    return ee;
+class Clock extends EventEmitter {
+    constructor() {
+        super();
+        setInterval(() => {
+            this.emit('tic')
+        }, 500);
+        setInterval(() => {
+            this.emit('tack')
+        }, 1000);
+    }
 }
 
-module.exports = {clock}
+module.exports = {Clock}
