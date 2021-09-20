@@ -1,15 +1,13 @@
 const {createServer} = require('http');
 const server = createServer();
-const {readFile, writeFile, appendFile, readdir, stat, access, mkdir, rename, unlink} = require('fs').promises;
+const {readFile, writeFile} = require('fs').promises;
 
 server.on('request', async (req, res) => {
     let counter = await readFile('./counter.txt', 'utf8');
     res.writeHead(200, 'Content-Type: text/plain');
     if (req.url !== '/favicon.ico') {
         const [, operation, num1, num2] = req.url.split('/');
-        const num11 = Number(num1);
-        const num22 = Number(num2);
-        writeFile('./counter.txt', `${++counter}`);
+        await writeFile('./counter.txt', `${++counter}`);
         res.write(counter + '\n');
         const result = (operation, num1, num2) => {
             switch (operation) {
@@ -24,7 +22,7 @@ server.on('request', async (req, res) => {
             }
         }
 
-        res.write(`${result(operation, num11, num22)}\n`);
+        res.write(`${result(operation, Number(num1), Number(num2))}\n`);
         res.write('end');
     }
     res.end();
