@@ -10,23 +10,21 @@ server.on('request', async (req, res) => {
         const num11 = Number(num1);
         const num22 = Number(num2);
         writeFile('./counter.txt', `${++counter}`);
-        console.log(counter)
         res.write(counter + '\n');
-        switch (operation) {
-            case 'add':
-                res.write(`${num11 + num22}\n`);
-                break;
-            case 'substract':
-                res.write(`${num11 - num22}\n`);
-                break;
-            case 'multiply':
-                res.write(`${num11 * num22}\n`);
-                break;
-            case 'divide':
-                res.write(`${num11 / num22}\n`);
-                break;
+        const result = (operation, num1, num2) => {
+            switch (operation) {
+                case 'add':
+                    return num1 + num2
+                case 'substract':
+                    return num1 - num2
+                case 'multiply':
+                    return num1 * num2
+                case 'divide':
+                    return num1 / num2
+            }
         }
-        // res.write(`${result}`);
+
+        res.write(`${result(operation, num11, num22)}\n`);
         res.write('end');
     }
     res.end();
