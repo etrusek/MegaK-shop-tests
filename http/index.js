@@ -13,7 +13,7 @@ server.on('request', async (req, res) => {
             switch (operation) {
                 case 'add':
                     return num1 + num2
-                case 'substract':
+                case 'subtract':
                     return num1 - num2
                 case 'multiply':
                     return num1 * num2
