@@ -13,7 +13,13 @@ const app = express();
 app.get('/', (req, res) => {
     res.send(req.get('user-agent'));
 })
-
+app.get('/hello', (req, res) => {
+    res.send('Hello');
+})
+app.get('/hello/:articleName', (req, res) => {
+    console.log(req.params)
+    res.send('Hello');
+})
 app.listen(3000, 'localhost', () => {
     console.log('listen on port 3000')
 })
