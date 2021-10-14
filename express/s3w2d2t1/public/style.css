@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    display: block;
+    padding: 2px;
+max-width: 100px;
+    border: 1px solid black;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
